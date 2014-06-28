@@ -1,0 +1,21 @@
+<%= form_for @mug do |f| %>
+<p>
+  <%= f.label :company %>
+  <%= f.text_field :company %>
+</p>
+  <p>
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.submit 'Add mug' %>
+  </p>
+<% end %>
+
+<%= @mugs.each do |mug| %>
+<ul>
+  <li>
+    <%= mug.company %>, <%= mug.size %>
+  </li>
+</ul>
+<% end %>
