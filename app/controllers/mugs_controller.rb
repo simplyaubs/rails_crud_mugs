@@ -15,6 +15,21 @@ class MugsController < ApplicationController
     end
   end
 
+  def show
+    @mug = Mug.find(params[:id])
+  end
+
+  def edit
+    @mug = Mug.find(params[:id])
+  end
+
+  def update
+    @mug = Mug.find(params[:id])
+    @mug.update_attributes!(mug_params)
+
+    redirect_to mugs_path
+  end
+
   private
   def mug_params
     params.require(:mug).permit(:company, :size)

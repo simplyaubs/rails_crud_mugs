@@ -1,0 +1,13 @@
+<%= form_for @mug do |f| %>
+  <p>
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+  </p>
+  <p>
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.submit 'Update mug' %>
+  </p>
+<% end %>

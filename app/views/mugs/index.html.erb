@@ -15,7 +15,7 @@
 <%= @mugs.each do |mug| %>
 <ul>
   <li>
-    <%= mug.company %>, <%= mug.size %>
+    <%= link_to "#{mug.company}", mug_path(mug) %>, <%= mug.size %>
   </li>
 </ul>
 <% end %>
