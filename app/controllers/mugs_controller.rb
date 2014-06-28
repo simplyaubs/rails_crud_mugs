@@ -30,6 +30,12 @@ class MugsController < ApplicationController
     redirect_to mugs_path
   end
 
+  def destroy
+    @mug = Mug.find(params[:id]).delete
+
+    redirect_to mugs_path
+  end
+
   private
   def mug_params
     params.require(:mug).permit(:company, :size)

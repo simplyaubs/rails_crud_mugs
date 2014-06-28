@@ -33,4 +33,21 @@ feature 'CRUD mugs' do
     expect(page).to_not have_content 'Github'
     expect(page).to_not have_content 'Large'
   end
+
+  scenario 'User can delete a mug from list' do
+    visit '/'
+    expect(page).to have_content 'Welcome'
+    click_on 'Add a mug'
+    fill_in 'Company', with: 'Github'
+    fill_in 'Size', with: 'Large'
+    click_on 'Add mug'
+    expect(page).to have_content 'Github'
+    expect(page).to have_content 'Large'
+    click_on 'Github'
+    expect(page).to have_content 'Github'
+    expect(page).to have_content 'Large'
+    click_on 'Delete'
+    expect(page).to_not have_content 'Github'
+    expect(page).to_not have_content 'Large'
+  end
 end
